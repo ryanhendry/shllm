@@ -22,5 +22,7 @@ jobs:
       run: |
         pip install openai pytest pyperclip
     - name: Run integration tests
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         pytest test.py
