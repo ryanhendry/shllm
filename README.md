@@ -1,5 +1,5 @@
 # shll
-
+  
 A tool to generate shell commands from ChatGPT and quickly run them on your terminal.
 
 Inspired by this [blog post](https://codeandlife.com/2024/02/10/linux-shell-ai-with-chatgpt/).
