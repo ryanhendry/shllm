@@ -24,5 +24,6 @@ jobs:
     - name: Run integration tests
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        PYTHONUNBUFFERED: "1"
       run: |
         pytest test.py
