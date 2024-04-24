@@ -29,4 +29,6 @@ try:
     else:
         print("Operation cancelled by user.")
 except Exception as e:
+    import traceback
+    traceback.print_exc()
     print("An error occurred:", str(e))
