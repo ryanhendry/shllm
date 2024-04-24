@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  integration_tests:
+  test_shll:
     runs-on: ubuntu-latest
 
     steps:
