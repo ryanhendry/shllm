@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "shll"
+version = "0.1.0"
+description = ""
+authors = ["Ryan Hendry <ryanhendry123@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pyperclip = "^1.9.0"
+openai = "^1.51.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
