@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  test_shllm:
+  shllm:
     runs-on: ubuntu-latest
 
     steps:
@@ -46,6 +46,11 @@ jobs:
     - name: Build the project
       run: |
         poetry build
+
+    - name: Get version from pyproject.toml
+      id: get_version
+      run: |
+        echo "::set-output name=version::$(poetry version --short)"
 
     - name: Create GitHub Release
       id: create_release
