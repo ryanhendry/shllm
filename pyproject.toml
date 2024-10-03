@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "shll"
-version = "0.1.0"
-description = ""
+name = "shllm"
+version = "0.0.1"
+description = "Natural langauge shell commands."
 authors = ["Ryan Hendry <ryanhendry123@gmail.com>"]
 readme = "README.md"
 
@@ -17,3 +17,6 @@ pytest = "^8.3.3"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+shllm = "shllm:main"

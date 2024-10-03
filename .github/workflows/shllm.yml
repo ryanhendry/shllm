@@ -1,4 +1,4 @@
-name: shll
+name: shllm
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  test_shll:
+  test_shllm:
     runs-on: ubuntu-latest
 
     steps:
@@ -41,4 +41,4 @@ jobs:
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        poetry run pytest test_shll.py
+        poetry run pytest test_shllm.py
