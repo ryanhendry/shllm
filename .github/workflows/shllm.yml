@@ -39,7 +39,7 @@ jobs:
 
     - name: Run integration tests
       env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        SHLLM_OPENAI_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         poetry run pytest test_shllm.py
 

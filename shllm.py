@@ -6,14 +6,14 @@ import pyperclip
 from openai import OpenAI
 
 def main():
-    if os.getenv('OPENAI_API_KEY') is None:
-        print("Error: OPENAI_API_KEY environment variable is not set.")
+    if os.getenv('SHLLM_OPENAI_KEY') is None:
+        print("Error: SHLLM_OPENAI_KEY environment variable is not set.")
         sys.exit(1)
 
-    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+    client = OpenAI(api_key=os.getenv('SHLLM_OPENAI_KEY'))
 
     prompt = ' '.join(sys.argv[1:])
-    role = 'You are Ubuntu linux shell helper. Given a question, answer with just a shell command, nothing else. Do not wrap it in markdown.'
+    role = 'You are macOS shell helper. Given a question, answer with just a shell command, nothing else. Do not wrap it in markdown.'
 
     try:
         model = os.getenv('OPENAI_MODEL', 'gpt-4o')
