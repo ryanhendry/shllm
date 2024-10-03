@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "shllm"
-version = "0.0.3"
+version = "0.0.4"
 description = "Natural langauge shell commands."
 authors = ["Ryan Hendry <ryanhendry123@gmail.com>"]
 readme = "README.md"
