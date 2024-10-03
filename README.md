@@ -1,3 +1,8 @@
+<p align="center">
+    <a href="https://pypi.org/project/shllm/">
+        <img src="https://img.shields.io/pypi/v/shllm?color=3772A5" /></a>
+</p>
+
 # shllm
   
 Generate shell commands using natural langauge.
