@@ -83,10 +83,8 @@ jobs:
         asset_name: shllm-${{ steps.get_version.outputs.version }}.whl
         asset_content_type: application/zip
 
-    - name: Configure PyPI token for Poetry
-      run: |
-        poetry config pypi-token.pypi ${{ secrets.POETRY_PYPI_TOKEN_PYPI }}
-
     - name: Publish to PyPI
       run: |
+        echo "${{ secrets.POETRY_PYPI_TOKEN_PYPI }}"
+        poetry config pypi-token.pypi ${{ secrets.POETRY_PYPI_TOKEN_PYPI }}
         poetry publish --build
