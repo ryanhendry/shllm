@@ -1,6 +1,6 @@
 [project]
 name = "shllm"
-version = "0.0.7"
+version = "0.0.8"
 description = "Natural language shell commands."
 authors = [
     {name = "Ryan Hendry", email = "ryanhendry123@gmail.com"},
