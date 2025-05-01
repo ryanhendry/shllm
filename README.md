@@ -29,7 +29,7 @@ shllm {{what you want to do}}
 ### Example
 ```bash
 shllm show how many gigabytes of free space I have left on my hard drive
-Command: df -h . | awk 'NR==2 {print $4}'
+Command to be copied to clipboard: df -h . | awk 'NR==2 {print $4}'
 What would you like to do? [c]opy to clipboard, [r]un the command, [q]uit: c
 Command has been copied to the clipboard.
 ```
@@ -42,5 +42,7 @@ Command has been copied to the clipboard.
   - macOS: pbcopy
   - Linux X11: xclip, xsel
   - Linux Wayland: wl-copy
+  - Android (Termux): termux-clipboard-set
   - Windows: clip
 - **Run directly**: Execute commands directly without copying
+- **Non-interactive mode**: Automatically detects non-interactive environments (like CI pipelines) and skips prompts
