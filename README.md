@@ -5,7 +5,7 @@
 
 # shllm
   
-Generate shell commands using natural langauge.
+Generate shell commands using natural language.
 
 ## Installation
 
@@ -29,20 +29,14 @@ shllm {{what you want to do}}
 ### Example
 ```bash
 shllm show how many gigabytes of free space I have left on my hard drive
-Command to be copied to clipboard: df -h . | awk 'NR==2 {print $4}'
-What would you like to do? [c]opy to clipboard, [r]un the command, [q]uit: c
-Command has been copied to the clipboard.
+Command: df -h . | awk 'NR==2 {print $4}'
+Would you like to run this command? [y]es/[n]o: y
+Running: df -h . | awk 'NR==2 {print $4}'
+425Gi
 ```
 
 ## Features
 
-- **Cross-platform clipboard support**: Works in various environments including SSH sessions
-- **Multiple clipboard backends**: Automatically tries different clipboard mechanisms based on your environment:
-  - Desktop environments: pyperclip
-  - macOS: pbcopy
-  - Linux X11: xclip, xsel
-  - Linux Wayland: wl-copy
-  - Android (Termux): termux-clipboard-set
-  - Windows: clip
-- **Run directly**: Execute commands directly without copying
-- **Non-interactive mode**: Automatically detects non-interactive environments (like CI pipelines) and skips prompts
+- **Direct command execution**: Run generated commands with simple yes/no confirmation
+- **Smart command generation**: Uses advanced AI to translate natural language to shell commands
+- **Non-interactive mode**: Automatically detects non-interactive environments and skips prompts

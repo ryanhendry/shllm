@@ -1,7 +1,7 @@
 [project]
 name = "shllm"
 version = "0.0.7"
-description = "Natural langauge shell commands."
+description = "Natural language shell commands."
 authors = [
     {name = "Ryan Hendry", email = "ryanhendry123@gmail.com"},
 ]
@@ -12,7 +12,6 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-clipboard = ["pyperclip>=1.9.0"]
 dev = ["pytest>=8.3.3"]
 
 [project.scripts]
