@@ -11,6 +11,14 @@ Generate shell commands using natural langauge.
 
 ```bash
 echo "export SHLLM_OPENAI_KEY={{OpenAI API Key}}" >> ~/.zshrc
+pip install uv
+uv pip install shllm
+```
+
+Alternatively:
+
+```bash
+echo "export SHLLM_OPENAI_KEY={{OpenAI API Key}}" >> ~/.zshrc
 pipx install shllm
 ```
 

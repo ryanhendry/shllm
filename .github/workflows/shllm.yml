@@ -29,28 +29,34 @@ jobs:
       with:
         python-version: '3.12'
 
-    - name: Install Poetry
+    - name: Install uv
       run: |
-        curl -sSL https://install.python-poetry.org | python3 -
+        pip install uv
 
-    - name: Install dependencies with Poetry
+    - name: Install dependencies with uv
       run: |
-        poetry install
+        uv pip install -e .
+        uv pip install pytest
 
     - name: Run integration tests
       env:
         SHLLM_OPENAI_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        poetry run pytest test_shllm.py
+        python -m pytest test_shllm.py
+
+    - name: Install build tools
+      run: |
+        uv pip install build
 
     - name: Build the project
       run: |
-        poetry build
+        python -m build
 
     - name: Get version from pyproject.toml
       id: get_version
       run: |
-        echo "::set-output name=version::$(poetry version --short)"
+        VERSION=$(grep -m 1 'version' pyproject.toml | cut -d '"' -f 2)
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
 
     - name: Create GitHub Release
       id: create_release
@@ -83,8 +89,13 @@ jobs:
         asset_name: shllm-${{ steps.get_version.outputs.version }}.whl
         asset_content_type: application/zip
 
+    - name: Install publishing tools
+      run: |
+        uv pip install twine
+
     - name: Publish to PyPI
       env:
-        POETRY_PYPI_TOKEN_PYPI: ${{ secrets.POETRY_PYPI_TOKEN_PYPI }}
+        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
       run: |
-        poetry publish
+        python -m twine upload dist/*
